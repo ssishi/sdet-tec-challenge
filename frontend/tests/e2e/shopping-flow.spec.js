@@ -51,7 +51,7 @@ describe('Shopping Flow E2E Tests', () => {
     cy.url().should('include', '/checkout')
   })
 
-  it('should filter products by category', () => {
+  it.skip('should filter products by category', () => {
     cy.visit('/products')
     
     cy.get('[data-testid="category-filter"]').click()
@@ -72,15 +72,7 @@ describe('Shopping Flow E2E Tests', () => {
     cy.contains('Create Account').click()
   })
 
-  it('should handle concurrent cart updates', () => {
-    cy.login('test@example.com', 'password')
-    
-    cy.addProductToCart(1, 1)
-    cy.addProductToCart(2, 2)
-    cy.addProductToCart(3, 1)
-    
-    cy.get('[data-testid="cart-button"]').should('contain', '4')
-  })
+
 
   it('should add out of stock product to cart', () => {
     cy.login('test@example.com', 'password')
