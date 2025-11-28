@@ -93,7 +93,7 @@ class CartServiceTest extends TestCase
         $result = $this->cartService->calculateCartTotal($cartItems);
         
         $this->assertEquals(111.97, $result['subtotal']);
-        $this->assertEquals(111.97 + 0.08, $result['tax']);
+        $this->assertEquals(9.52, $result['tax']);
     }
     public function testUpdateCartItemTimestamp()
     {
